@@ -1,24 +1,33 @@
 "use client"
 
 import Button from '@/components/Button'
-import React from 'react'
+import React, { useState } from 'react'
 
 const page = () => {
- 
+  const [formVisibe, setFormVisible] = useState(false);
+  const[placeholder, setPlaceholder] =  useState('Developer......')
   const buttonInfo = [
     {
       id:1,
-      name: "Developer"
+      name: "Developer",
+      placeholder: "Developer....."
     },
     {
       id:2,
-      name: "Organisation"
+      name: "Organisation",
+      placeholder: "Organisation name..."
     },
     {
       id:3,
-      name: "Company"
+      name: "Company",
+      placeholder: "Company name..."
     }
   ]
+
+  const handlePlacholde = (placeholder)  => {
+    setPlaceholder(placeholder)
+    setFormVisible(true)     
+  }
 
   return (
     <> 
@@ -34,7 +43,9 @@ const page = () => {
         <div className="grid grid-cols-3 mt-32">
           {buttonInfo.map((butt, id) => (
             <div key={id}>
-              <button className="btn btn-outline  hover:btn-primary">{butt.name}</button>
+              <button className="btn btn-outline  hover:btn-primary" 
+              onClick={() => handlePlacholde(butt.placeholder)}
+              >{butt.name}</button>
 
             </div>
             
@@ -43,12 +54,12 @@ const page = () => {
     
         </div>
 
-              <form> 
+            {  formVisibe && <form> 
                 <div className='flex flex-row gap-10 mt-16 items-end text-center justify-center'>
-                <input type="text" placeholder="Developer..." className="input input-bordered w-full max-w-xs" />
-                <button className="btn btn-primary">Submit</button>
+                <input type="text" placeholder={placeholder} className="input input-bordered w-full max-w-xs" />
+                <button className="btn btn-primary" >Submit</button>
                 </div>
-              </form>
+              </form>}
       </div>
     </div>
     
@@ -59,3 +70,7 @@ const page = () => {
 }
 
 export default page
+
+
+
+
