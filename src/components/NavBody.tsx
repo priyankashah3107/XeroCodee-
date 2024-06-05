@@ -279,7 +279,90 @@ const NavBody = () => {
 
 
 
-            <div className=''>2</div>
+            <div className='w-[304px] h-[728px] bg-gradient-to-b from-white to-white rounded-[15px] shadow-lg border border-black/10 mr-6 text-center'>
+                 
+                 <div className='flex flex-col mt-8 items-center'>
+                 <div className="text-black text-[22px] font-bold font-['Nunito'] tracking-wide">Your Progress</div>
+                <p className="text-zinc-500 text-sm font-bold font-['Nunito'] tracking-wide">towards XeroCodee</p>
+
+                 <Image src="/circle.png" alt='img' width={140} height={147} className='mt-14' />
+                 <button className="btn btn-active rounded-full mt-8 text-xs font-bold font-['Nunito'] leading-tight tracking-wide">View Details</button>
+                 </div>
+
+                 <div className="grid grid-rows-3">
+                    <div>
+                      <p className=" text-left ml-2 text-neutral-500/50 text-sm font-bold font-['Nunito'] tracking-wide">Step1</p>
+
+                       <div className=" text-left flex flex-row justify-between w-66 h-[72px] bg-yellow-50 rounded-[10px] shadow border border-zinc-100 mt-2">
+
+                        <div className='flex flex-col'>
+                        <h4 className="text-zinc-800 text-lg font-bold font-['Nunito'] tracking-wide ml-6 mt-2">AWS</h4>
+                        <p className="text-neutral-500 text-sm font-bold font-['Nunito'] tracking-wide ml-6">Status: Complete</p>
+                        </div>
+                         
+                        <div className="flex flex-row mr-4">
+                        <Image src="/aws.png" alt='img' width={76} height={40} className='p-3'/>
+                        <div className='flex flex-col gap-3 mt-3'>
+                        <div className="w-2 h-2  bg-zinc-800/25 rounded-full" />
+                        <div className="w-2 h-2  bg-zinc-800/25 rounded-full" />
+                        <div className="w-2 h-2  bg-zinc-800/25 rounded-full" />
+                        </div>
+                       
+                        </div>
+                        
+                       </div>      
+                    </div>
+
+{/**Item2 */}
+                    <div>
+                      <p className=" text-left ml-2 text-neutral-500/50 text-sm font-bold font-['Nunito'] tracking-wide mt-2">Step2</p>
+
+                       <div className=" text-left flex flex-row justify-between w-66 h-[72px] bg-rose-100 rounded-[10px] shadow border border-zinc-100 mt-2">
+
+                        <div className='flex flex-col'>
+                        <h4 className="text-zinc-800 text-lg font-bold font-['Nunito'] tracking-wide ml-6 mt-2">AWS</h4>
+                        <p className="text-neutral-500 text-sm font-bold font-['Nunito'] tracking-wide ml-6">Status: Complete</p>
+                        </div>
+                         
+                        <div className="flex flex-row mr-4">
+                        <Image src="/aws.png" alt='img' width={76} height={40} className='p-3'/>
+                        <div className='flex flex-col gap-3 mt-3'>
+                        <div className="w-2 h-2  bg-zinc-800/25 rounded-full" />
+                        <div className="w-2 h-2  bg-zinc-800/25 rounded-full" />
+                        <div className="w-2 h-2  bg-zinc-800/25 rounded-full" />
+                        </div>
+                       
+                        </div>
+                        
+                       </div>      
+                    </div>
+
+       {/**Item 3 */}
+                    <div>
+                      <p className=" text-left ml-2 text-neutral-500/50 text-sm font-bold font-['Nunito'] tracking-wide mt-4">Step3</p>
+
+                       <div className=" text-left flex flex-row justify-between w-66 h-[72px] bg-green-50 rounded-[10px] shadow border border-zinc-100 mt-2">
+
+                        <div className='flex flex-col'>
+                        <h4 className="text-zinc-800 text-lg font-bold font-['Nunito'] tracking-wide ml-6 mt-2">AWS</h4>
+                        <p className="text-neutral-500 text-sm font-bold font-['Nunito'] tracking-wide ml-6">Status: Complete</p>
+                        </div>
+                         
+                        <div className="flex flex-row mr-4">
+                        <Image src="/aws.png" alt='img' width={76} height={40} className='p-3'/>
+                        <div className='flex flex-col gap-3 mt-3'>
+                        <div className="w-2 h-2  bg-zinc-800/25 rounded-full" />
+                        <div className="w-2 h-2  bg-zinc-800/25 rounded-full" />
+                        <div className="w-2 h-2  bg-zinc-800/25 rounded-full" />
+                        </div>
+                       
+                        </div>
+                        
+                       </div>      
+                    </div>
+                 </div>
+                
+            </div>
 
 
 
@@ -293,7 +376,7 @@ const NavBody = () => {
 
 
 
-            
+
            </div>
 
 
