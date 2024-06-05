@@ -22,7 +22,7 @@ const page = () => {
          <Image  src="/mail.png" alt='img' height={50} width={52} /> 
          <Image  src="/setting.png" alt='img' height={50} width={50} /> 
         
-         <p className="flex flex-row text-center items-center justify-center text-xl">XeroCodee <FaAngleDown /></p>
+         <p className="flex flex-row text-center items-center justify-center text-base">XeroCodee <FaAngleDown /></p>
          <Image  src="/user.png" alt='img' height={40} width={40} /> 
       </div> 
      </nav>
