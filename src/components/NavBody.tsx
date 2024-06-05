@@ -179,34 +179,100 @@ const NavBody = () => {
 
 
           <div className="contnt  ">
-             <div className='flex flex-row'>
-
-              <div className='flex flex-col'>
-              <h6 className="ml-6  text-black text-lg font-bold font-['Nunito'] tracking-wide">Step 1</h6>
-              <p className="ml-6  text-neutral-500 text-sm font-bold font-['Nunito'] tracking-wide">Connect to Cloud</p>
+            
+          <div className='ml-4 '>
+                <h4 className="text-black text-lg font-bold font-['Nunito'] tracking-wide">Step 1</h4>
+                <p className="text-neutral-500 text-sm font-bold font-['Nunito'] tracking-wide">Connect to Cloud</p>
               </div>
-              
 
-              {step1.map((val, idx) => (
-                <div key={idx} className="grid grid-cols-2  gap-16 ml-6  w-[260px] h-[128px] bg-white rounded-[15px] shadow border border-zinc-100 mt-20"> 
-                
-                   <div className='flex flex-col gap-14 ml-4 '>
-                    <h4 className="mt-2 text-zinc-800 text-[22px] font-bold font-['Nunito'] tracking-wide">{val.name}</h4>
-                    <div className='flex flex-row gap-4 '>
-                    <Image  src={val.dot} alt='img' width={10} height={10}/>
-                    <Image  src={val.dott} alt='img' width={10} height={10}/>
-                    <Image  src={val.syn} alt='img' width={20} height={20}/>
-                    </div>
-                    
-                   </div>
-                   <Image  src={val.image} alt='img' width={90} height={50} className='pt-6 pb-2'/>
-                   
+                <div className='grid grid-cols-2 mt-6'>
+                  {step1.map((val, idx) => (
+                     <div key={idx} className="grid grid-rows-2 w-[200px] h-[108px] bg-white rounded-[15px] shadow-lg border border-zinc-100 gap-8">
+                            
+                      <div className='flex flex-row justify-between p-2'>
+                        <div className="flex flex-col gap-4 mt-2 text-zinc-800 text-[22px] font-bold font-['Nunito'] tracking-wide">{val.name}
+                        <div className='flex flex-row gap-4 mt-4'>
+                        <Image src={val.dot} alt='img' width={10} height={10} />
+                          <Image src={val.dott} alt='img' width={10} height={10} />
+                          <Image src={val.syn} alt='img' width={20} height={10} />
+                          </div>
+                        </div>
+                        
+                          
+                       
+                        <div><Image src={val.image} alt='img' width={60} height={60} /></div>
+                      </div> 
+
+                     </div>
+                  ))}
                 </div>
-              ))}
+
+
+
+             <div>  
+              <div className='ml-4 mt-10'>
+                <h4 className="text-black text-lg font-bold font-['Nunito'] tracking-wide">Step 2</h4>
+                <p className="text-neutral-500 text-sm font-bold font-['Nunito'] tracking-wide">Connect to Source Code</p>
+              </div>
+
+                <div className='grid grid-cols-3 mt-6'>
+                  {step2.map((val, idx) => (
+                     <div key={idx} className="grid grid-rows-3 w-[200px] h-[108px] bg-white rounded-[15px] shadow-lg border border-zinc-100 gap-8 m-8">
+                            
+                      <div className='flex flex-row justify-between p-2'>
+                        <div className="flex flex-col gap-4 mt-2 text-zinc-800 text-[22px] font-bold font-['Nunito'] tracking-wide">{val.name}
+                        <div className='flex flex-row gap-4 mt-4'>
+                        <Image src={val.dot} alt='img' width={10} height={10} />
+                          <Image src={val.dott} alt='img' width={10} height={10} />
+                          <Image src={val.syn} alt='img' width={20} height={10} />
+                          </div>
+                        </div>
+                        
+                          
+                       
+                        <div><Image src={val.image} alt='img' width={60} height={60} /></div>
+                      </div> 
+
+                     </div>
+                  ))}
+                </div>
+
+           
+
+           
+        {/* items3*/}  
+
+        <div className='ml-4 mt-10'>
+                <h4 className="text-black text-lg font-bold font-['Nunito'] tracking-wide">Step 3</h4>
+                <p className="text-neutral-500 text-sm font-bold font-['Nunito'] tracking-wide">Connect to Database</p>
+              </div>
+
+                <div className='grid grid-cols-3 mt-6'>
+                  {step3.map((val, idx) => (
+                     <div key={idx} className="grid grid-rows-3 w-[200px] h-[108px] bg-white rounded-[15px] shadow-lg border border-zinc-100 gap-8 m-8">
+                            
+                      <div className='flex flex-row justify-between p-2'>
+                        <div className="flex flex-col gap-4 mt-2 text-zinc-800 text-[22px] font-bold font-['Nunito'] tracking-wide">{val.name}
+                        <div className='flex flex-row gap-4 mt-4'>
+                        <Image src={val.dot} alt='img' width={10} height={10} />
+                          <Image src={val.dott} alt='img' width={10} height={10} />
+                          <Image src={val.syn} alt='img' width={20} height={10} />
+                          </div>
+                        </div>
+                        
+                          
+                       
+                        <div><Image src={val.image} alt='img' width={60} height={60} /></div>
+                      </div> 
+
+                     </div>
+                  ))}
+                </div>
+
              </div>
 
-             <div>2</div>
-             <div>3</div>
+
+            
           </div>
 
 
@@ -214,6 +280,20 @@ const NavBody = () => {
 
 
             <div className=''>2</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
            </div>
 
 
