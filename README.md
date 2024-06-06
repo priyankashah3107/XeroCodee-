@@ -13,7 +13,8 @@ pnpm dev
 # or
 bun dev
 ```
-
+Working Video [Loom] [https://www.loom.com/share/bf0dbe53051144ecb59db411acef4f25]
+Live [Vercel] [https://xero-codee-sooty.vercel.app/]
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
