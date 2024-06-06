@@ -1,26 +1,53 @@
 "use client"
 import Link from 'next/link';
-import React from 'react'
+import React, { useState } from 'react'
 import { FcGoogle } from "react-icons/fc";
 import { SiGithub } from "react-icons/si";
 
 const page = () => {
+  const [name, setName] = useState('')
+  const [lastName, setLastName] = useState('')
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [confirmpass, setConfirmPass] = useState('')
+  console.log(name)
+  console.log(lastName)
+  console.log(email)
+  console.log(password)
+  console.log(confirmpass)
+
+ function handleSubmit(ev: any) {
+    ev.preventDefault()
+ }
+
   return (
-    <div className='absolute'>
+    <div className='absolute '>
       <div className="w-[805px] h-[632px] rounded-tr-[35px] rounded-bl-[35px] rounded-br-[35px] shadow border border-black relative left-48 top-16 text-center" >
             <h1 className=" text-center text-black text-4xl font-bold font-['Nunito'] capitalize leading-[48px] mt-2">Hello!</h1>
             <p className=" text-slate-900/70 text-sm font-bold font-['Nunito'] capitalize leading-[20px]"> <span className=' border border-slate-400/40 transform rotate-360'></span> Create Your Account <span className=' border border-slate-400/40 transform rotate-360'></span></p>
 
 
-            <form >
+            <form action="submit" onSubmit={handleSubmit}>
               <div className='flex flex-col text-center items-center gap-4 mt-8'>
-              <input type="text" placeholder="First Name" className="input w-full max-w-xs" />
-            <input type="text" placeholder="Last Name" className="input w-full max-w-xs" />
+              <input type="text" placeholder="First Name" className="input w-full max-w-xs" 
+              value={name}
+              onChange={(e) => setName(e.target.value)}/>
+            <input type="text" placeholder="Last Name" className="input w-full max-w-xs" 
+            value={lastName} 
+            onChange={(e) =>  setLastName(e.target.value)} />
 
-            <input type="email" placeholder="Email-Id" className="input w-full max-w-xs" />
-            <input type="password" placeholder="Password" className="input w-full max-w-xs" />
-            <input type="password" placeholder="Confirm Password" className="input w-full max-w-xs"/>
-            <button className="btn btn-primary w-full max-w-xs">SIGN UP</button>
+            <input type="email" placeholder="Email-Id" className="input w-full max-w-xs" 
+            value={email}
+            onChange={(e) => setEmail(e.target.value)} />
+
+            <input type="password" placeholder="Password" className="input w-full max-w-xs" 
+            value={password} 
+            onChange={(e) => setPassword(e.target.value)}/>
+            <input type="password" placeholder="Confirm Password" className="input w-full max-w-xs" 
+            value={confirmpass} 
+            onChange={(e) => setConfirmPass(e.target.value)}/>
+
+            <button className="btn btn-primary w-full max-w-xs" type='submit' >SIGN UP</button>
 
             <b>OR</b>
 
