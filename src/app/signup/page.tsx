@@ -12,11 +12,11 @@ const page = () => {
   const [password, setPassword] = useState<string>('')
   const [confirmpass, setConfirmPass] = useState<string>('')
 
-  console.log(name)
-  console.log(lastName)
-  console.log(email)
-  console.log(password)
-  console.log(confirmpass)
+  // console.log(name)
+  // console.log(lastName)
+  // console.log(email)
+  // console.log(password)
+  // console.log(confirmpass)
 
   async function handleSubmit(ev: any) {
     ev.preventDefault();
@@ -32,6 +32,16 @@ const page = () => {
       console.error(error);
     }
   }
+
+  const handleOAuthLogin = async (provider: any) => {
+    try {
+      await account.createOAuth2Session(provider, 'http://localhost:3000', 'http://localhost:3000');
+    } catch (error) {
+      const err = error as Error; // Type assertion
+      console.error(err);
+      alert("Error logging in with " + provider + ": " + err.message);
+    }
+  };
 
   return (
     <div className='absolute '>
@@ -66,8 +76,11 @@ const page = () => {
 
             <div className='flex flex-row items-center  gap-4'>
 
-            <button className="btn btn-outline   text-slate-950/opacity-50 text-sm font-semibold font-['Nunito'] capitalize items-center">Sign Up With Google <FcGoogle /> </button>
-            <button className="btn btn-outline  text-slate-950/opacity-50 text-sm font-semibold font-['Nunito'] capitalize items-center"> Sign Up With Github <SiGithub /></button>
+            <button className="btn btn-outline   text-slate-950/opacity-50 text-sm font-semibold font-['Nunito'] capitalize items-center" 
+             onClick={() => handleOAuthLogin('google')}>Sign Up With Google <FcGoogle /> </button>
+
+            <button className="btn btn-outline  text-slate-950/opacity-50 text-sm font-semibold font-['Nunito'] capitalize items-center" 
+            onClick={() => handleOAuthLogin('github')}> Sign Up With Github <SiGithub /></button>
             </div>
 
               <p className="text-slate-950/50 text-sm font-normal font-['Nunito'] ">Already have an Account ? <Link className="text-blue-600 text-sm font-medium font-['Nunito']" href={"/login"}>LOGIN</Link></p>

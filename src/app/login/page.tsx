@@ -21,6 +21,13 @@ const page = () => {
       console.error(error);
     }
   }
+  const handleOAuthLogin = async (provider: any) => {
+    try {
+      await account.createOAuth2Session(provider, 'http://localhost:3000', 'http://localhost:3000');
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   return (
     <>
@@ -51,9 +58,11 @@ const page = () => {
 
     <div className='flex flex-row items-center  gap-4'>
 
-    <button className="btn btn-outline   text-slate-950/opacity-50 text-sm font-semibold font-['Nunito'] capitalize items-center">Sign Up With Google <FcGoogle /> </button>
+    <button className="btn btn-outline   text-slate-950/opacity-50 text-sm font-semibold font-['Nunito'] capitalize items-center" 
+    onClick={() => handleOAuthLogin('google')}>Sign Up With Google <FcGoogle /> </button>
 
-    <button className="btn btn-outline  text-slate-950/opacity-50 text-sm font-semibold font-['Nunito'] capitalize items-center"> Sign Up With Github <SiGithub /></button>
+    <button className="btn btn-outline  text-slate-950/opacity-50 text-sm font-semibold font-['Nunito'] capitalize items-center" 
+    onClick={() => handleOAuthLogin('github')}> Sign Up With Github <SiGithub /></button>
     </div>
 
     <p className="text-slate-950/50 text-sm font-normal font-['Nunito'] ">Do not have an Account ?<Link className="text-blue-600 text-sm font-medium font-['Nunito']" href={"/signup"}> {" "}Signup</Link></p>
