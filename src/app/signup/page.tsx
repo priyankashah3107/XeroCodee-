@@ -3,22 +3,35 @@ import Link from 'next/link';
 import React, { useState } from 'react'
 import { FcGoogle } from "react-icons/fc";
 import { SiGithub } from "react-icons/si";
+import {account, ID} from "@/lib/server/appwrite.js"
 
 const page = () => {
-  const [name, setName] = useState('')
-  const [lastName, setLastName] = useState('')
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
-  const [confirmpass, setConfirmPass] = useState('')
+  const [name, setName] = useState<string>('')
+  const [lastName, setLastName] = useState<string>('')
+  const [email, setEmail] = useState<string>('')
+  const [password, setPassword] = useState<string>('')
+  const [confirmpass, setConfirmPass] = useState<string>('')
+
   console.log(name)
   console.log(lastName)
   console.log(email)
   console.log(password)
   console.log(confirmpass)
 
- function handleSubmit(ev: any) {
-    ev.preventDefault()
- }
+  async function handleSubmit(ev: any) {
+    ev.preventDefault();
+    if (password !== confirmpass) {
+      alert("Passwords do not match");
+      return;
+    }
+
+    try {
+      await account.create(ID.unique(), email, password, `${name} ${lastName}`);
+      alert("User registered successfully");
+    } catch (error) {
+      console.error(error);
+    }
+  }
 
   return (
     <div className='absolute '>

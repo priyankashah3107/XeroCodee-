@@ -1,10 +1,27 @@
 "use client"
+import { access } from 'fs';
 import Image from 'next/image'
 import Link from 'next/link';
-import React from 'react'
+import React, { useState } from 'react'
 import { FcGoogle } from "react-icons/fc";
 import { SiGithub } from "react-icons/si";
+import {account, ID} from "@/lib/server/appwrite.js"
+
+
 const page = () => {
+  const [email, setEmail] = useState<string>('');
+  const [password, setPassword] = useState<string>('')
+
+  const handleLogin = async (e:any) => {
+    e.preventDefault();
+    try {
+      await account.createEmailPasswordSession(email, password);
+      alert("User logged in successfully");
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
   return (
     <>
      <div className=" ">
@@ -19,11 +36,15 @@ const page = () => {
 <p className=" text-center text-slate-950/50 text-sm font-bold font-['Nunito'] capitalize leading-[21px]">Login to your Account</p>
 
 
-  <form>
+  <form onSubmit={handleLogin}>
     <div className='flex flex-col text-center items-center gap-4 mt-20'>
-    <input type="email" placeholder="Email-Id" className="input w-full max-w-xs" />
-    <input type="password" placeholder="Password" className="input w-full max-w-xs" />
-    <button className="btn btn-primary w-full max-w-xs">Login</button>
+    <input type="email" placeholder="Email-Id" className="input w-full max-w-xs"  
+    value={email} 
+    onChange={(e) => setEmail(e.target.value)}/>
+    <input type="password" placeholder="Password" className="input w-full max-w-xs" 
+    value={password} 
+    onChange={(e) => setPassword(e.target.value) } />
+    <button className="btn btn-primary w-full max-w-xs " type='submit'>Login</button>
      
      
     <b>OR</b>
